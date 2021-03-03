@@ -5,6 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.util.TestPropertyValues
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.testcontainers.containers.MongoDBContainer
@@ -16,6 +17,7 @@ import org.testcontainers.utility.DockerImageName
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ContextConfiguration(initializers = [MongoDBInitializer::class, PostgresDBInitializer::class])
 @ExtendWith(SpringExtension::class)
+@ActiveProfiles("it")
 annotation class IntegrationTest
 
 // https://dev.to/sivalabs/springboot-integration-testing-using-testcontainers-starter-13h2
