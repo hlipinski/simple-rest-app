@@ -5,9 +5,7 @@ import io.github.hlipinski.domain.ScreeningRepository
 import org.jetbrains.exposed.sql.select
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component
-import org.springframework.stereotype.Repository
 import java.time.Instant
-import javax.annotation.processing.Generated
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id

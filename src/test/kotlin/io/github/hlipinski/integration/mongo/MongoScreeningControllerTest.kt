@@ -11,7 +11,7 @@ import org.springframework.test.context.junit.jupiter.EnabledIf
 
 @EnabledIf(expression = "#{environment['app.main.database'] == 'mongodb'}", loadContext = true)
 @IntegrationTest
-class PostgresScreeningControllerTest @Autowired private constructor(
+class MongoScreeningControllerTest @Autowired private constructor(
     restTemplate: TestRestTemplate,
     private val repository: ScreeningRepository) : ScreeningControllerTest(restTemplate) {
 

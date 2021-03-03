@@ -2,7 +2,7 @@ package io.github.hlipinski.integration
 
 import io.github.hlipinski.domain.Screening
 import io.github.hlipinski.rest.ScreeningDtoList
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.springframework.boot.test.web.client.TestRestTemplate
 import java.time.Instant
 
@@ -16,8 +16,11 @@ open class ScreeningControllerTest(private val restTemplate: TestRestTemplate) {
             ScreeningDtoList::class.java
         )
 
-        Assertions.assertThat(response.screenings).isNotEmpty
-        Assertions.assertThat(response.screenings.size).isEqualTo(1)
+        assertThat(response.screenings).isNotEmpty
+        assertThat(response.screenings.size).isEqualTo(1)
+        assertThat(response.screenings[0])
+            .usingRecursiveComparison()
+            .isEqualTo(screening)
     }
 
     internal fun givenScreening(

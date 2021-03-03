@@ -1,11 +1,8 @@
 package io.github.hlipinski
 
-import io.github.hlipinski.adapters.postgres.ScreeningEntityTable
-import io.github.hlipinski.adapters.postgres.toScreeningEntityList
 import io.github.hlipinski.domain.Screening
 import io.github.hlipinski.domain.ScreeningRepository
 import io.github.hlipinski.rest.ScreeningDto
-import org.jetbrains.exposed.sql.selectAll
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 import java.text.Normalizer
